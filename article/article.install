@@ -1,4 +1,12 @@
 <?php
+/**
+ * @file
+ * Install file for article module
+ */
+
+/**
+ * Implementation of hook_install().
+ */
 function article_install() {
   // create date field
   foreach (_article_installed_fields() as $field) {
@@ -50,7 +58,10 @@ function _article_installed_instances() {
   );
   return $instances;
 }
- 
+
+ /**
+ * Implementation of hook_uninstall().
+ */
 function article_uninstall() {
    // all instances of the field, their data, and the field itself.
   foreach (array_keys(_article_installed_fields()) as $field) {
