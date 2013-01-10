@@ -1,0 +1,14 @@
+; $Id: article.info,v 1.1.4.1.4.1  2012-01-04 15:58:38  Exp $
+name =  Article date update
+description = Article module for update date field.
+core = 7.x
+dependencies[] = date
+dependencies[] = date_popup
+
+; Information added by drupal.org packaging script on 2013-01-10
+version = "7.x-1.0"
+core = "7.x"
+package = Custom
+project = "Article date"
+datestamp = "1207584301"
+
