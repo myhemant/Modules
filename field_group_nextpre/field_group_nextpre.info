@@ -1,13 +1,11 @@
 name = Field group Next/Pre button
 description = Field group tabs with next pre buttons.
 core = 7.x
+dependencies[] = field_group
 package = Fields
-
-;scripts[] = js/field_group_nextpre.js
 
 ; Information added by  packaging script on 2014-06-19
 version = "7.x-1.1"
 core = "7.x"
 project = "field_group_nextpre"
 datestamp = "1385335705"
-

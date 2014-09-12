@@ -1,6 +1,6 @@
 (function ($) {
 /**
- * This script use to perform next pre event with field group tabs
+ * This script use to perform next pre event with field group vertical tabs
  * tab.
  *
  * Each tab have some field which is traverse by next pre buttons
@@ -26,27 +26,27 @@
 		$('#edit-prev', context).click(function (e) {
 			e.preventDefault();
 			var t = $('.field-group-tabsnp-wrapper .vertical-tabs-panes fieldset.vertical-tabs-pane').length;
-			var ct = $('.field-group-tabsnp-wrapper .vertical-tabs-panes fieldset:visible').index();	
+			ct = '';
+			$('.field-group-tabsnp-wrapper ul.vertical-tabs-list li').each(function(i,v) { if(jQuery(this).hasClass('selected')) {ct =i;}});
 			// Hide the current tab and show the previous tab
 			$('.field-group-tabsnp-wrapper .vertical-tabs-panes fieldset:visible').hide().prev('fieldset').show();
 			$(".vertical-tabs-list li.selected").removeClass('selected').prev('li').addClass('selected');			
 			$('html,body').animate({scrollTop: (0)}, 500);	
 			// Control the Next Pre Buttons
-			console.log(t);console.log(ct);
-			var last =  (t-1 == ct ) ? $("#edit-next").hide() : $("#edit-next").show();
-			var first = (ct == 0)   ?  $("#edit-prev").hide() : $("#edit-prev").show();
+			var last =  (t == ct ) ? $("#edit-next").hide() : $("#edit-next").show();
+			var first = (ct == 1)   ?  $("#edit-prev").hide() : $("#edit-prev").show();
 			return false;
 		});
-		$('.horizontal-tabs-list li a', context).click(function (e) {
-			 $(".horizontal-tabs-pane").removeAttr("style"); 
-			 var t = jQuery('.horizontal-tabs-panes fieldset.horizontal-tabs-pane').length;
-			 var ct = jQuery(".horizontal-tabs-panes fieldset.horizontal-tabs-pane").not('.horizontal-tab-hidden').index();
+		$('.vertical-tabs-list li a', context).click(function (e) {
+			 $(".vertical-tabs-panes").removeAttr("style"); 
+			 var t = jQuery('.field-group-tabsnp-wrapper .vertical-tabs-list li').length;
+			 ct = '';
+			 $('.field-group-tabsnp-wrapper ul.vertical-tabs-list li').each(function(i,v) { if(jQuery(this).hasClass('selected')) {ct =i;}});
 			 var last =  (t-1 == ct ) ? $("#edit-next").hide() : $("#edit-next").show();
 			 var first = (ct == 0)   ?  $("#edit-prev").hide() : $("#edit-prev").show();	
 		});
 		
-		var i = jQuery(".field-group-tabsnp-wrapper .vertical-tabs-panes").not('.horizontal-tab-hidden').index();
-		//this.showButton(i);
+		var i = jQuery(".field-group-tabsnp-wrapper .vertical-tabs-panes").not('.vertical-tab-hidden').index();
 	},
 	showButton: function(i){ 		
 		var ind = (i == 0) ? $("#edit-prev").hide() : $("#edit-prev").show();  

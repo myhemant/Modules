@@ -1,6 +1,6 @@
 (function ($) {
 /**
- * This script use to perform next pre event with field group tabs
+ * This script use to perform next pre event with field group horizontal tabs
  * tab.
  *
  * Each tab have some field which is traverse by next pre buttons
