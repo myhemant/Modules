@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Implements field_group_nextpre_field_group_formatter_info.
+ */
 function field_group_nextpre_field_group_formatter_info() {
   return array(
 	'form' => array(
@@ -32,8 +34,8 @@ function field_group_nextpre_field_group_formatter_info() {
 /**
  * Helper function to prepare basic variables needed for most formatters.
  *
- * Called in field_group_field_group_pre_render(), but can also be called in
- * other implementations of hook_field_group_pre_render().
+ * Called in field_group_field_group_nextpre_pre_render(), but can also be called in
+ * other implementations of hook_field_group_nextpre_pre_render().
  */
 function field_group_nextpre_pre_render_prepare(&$group) {
 
@@ -45,7 +47,7 @@ function field_group_nextpre_pre_render_prepare(&$group) {
 }
 
 /**
- * Implements hook_field_group_pre_render().
+ * Implements hook_field_group_nextpre_pre_render().
  *
  * @param Array $elements by address.
  * @param Object $group The Field group info.
@@ -77,7 +79,7 @@ function field_group_nextpre_field_group_pre_render(&$element, &$group, & $form)
 }
 
 /**
- * Implements field_group_pre_render_<format-type>.
+ * Implements field_group_nextpre_pre_render_<format-type>.
  * Format type: Horizontal tabs group.
  *
  * @param $element The field group form element.
@@ -144,7 +146,7 @@ drupal_add_js(array('nextpre_settings' => $settings_name_nextpre), 'setting');
     //'website' => 'http://drupal.org/node/323112',
     'version' => '1.0',
     'js' => array(
-          $path . '/js/fieldgroup_nextpre_vertical.js' => array(),
+          $path . '/js/field_group_nextpre.js' => array(),
     ),
     'css' => array(
       $path . '/css/horizontal-nextpre-tabs.css' => array(),
@@ -187,7 +189,7 @@ function field_group_nextpre_pre_render_htabnp(&$element, $group, &$form) {
 
 
 /**
- * Implements field_group_pre_render_<format-type>.
+ * Implements field_group_nextpre_pre_render_<format-type>.
  * Format type: Vertical tabs wrapper.
  *
  * @param $element The field group form element.
@@ -218,7 +220,7 @@ function field_group_nextpre_pre_render_tabsnp(&$element, $group, &$form) {
 }
 
 /**
- * Implements field_group_pre_render_<format-type>.
+ * Implements field_group_nextpre_pre_render_<format-type>.
  * Format type: Vertical tab.
  *
  * @param $element The field group form element.
