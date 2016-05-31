@@ -1,0 +1,7 @@
+pgwslider.admin_settings:
+  path: '/admin/config/media/pgwslider'
+  defaults:
+    _form: '\Drupal\pgwslider\Form\SettingsForm'
+    _title: 'PgwSlider Global Configuration'
+  requirements:
+    _permission: 'administer site configuration'

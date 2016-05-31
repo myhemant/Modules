@@ -1,0 +1,16 @@
+name: PgwSlider
+type: module
+description: 'Provides an integration between the Pgwslider HTML5 responsive gallery library and Drupal.'
+package: Media
+# core: 8.x
+dependencies:
+  - file
+  - image
+  - libraries
+configure: admin/config/media/pgwslider
+
+# Information added by Drupal.org packaging script on 2016-02-13
+version: '8.x-2.0-beta1'
+core: '8.x'
+project: 'pgwslider'
+datestamp: 1455394441

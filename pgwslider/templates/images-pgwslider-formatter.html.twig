@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ * - arrownavigator: Weither or not use arrows navigator.
+ * - bulletnavigator: Weither or not use bullets navigator.
+ *
+ * @see template_preprocess_images_p_formatter()
+ */
+#}
+<div {{ attributes.addClass(classes) }}>
+
+   <ul class="pgwSlideshow">
+        {{ children }}
+   </ul>
+</div>
